@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Cocos2d-html5 Hello World test</title>
+    <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="full-screen" content="yes"/>
+    <meta name="screen-orientation" content="portrait"/>
+    <meta name="x5-fullscreen" content="true"/>
+    <meta name="360-fullscreen" content="true"/>
+    <style>
+        body, canvas, div {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+            -khtml-user-select: none;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+        }
+    </style>
+</head>
+<body style="padding:0; margin: 0; background: #000;">
+<canvas id="gameCanvas" width="480" height="320"></canvas>
+<script src="frameworks/cocos2d-html5/CCBoot.js"></script>
+<script src="main.js"></script>
+<script src="frameworks/google-blockly-3e12c1e/blockly_compressed.js"></script>
+<script src="frameworks/google-blockly-3e12c1e/blocks_compressed.js"></script>
+<script src="frameworks/google-blockly-3e12c1e/msg/js/en.js"></script>
+<script src="frameworks/google-blockly-3e12c1e/javascript_compressed.js"></script>
+<script src="frameworks/google-blockly-3e12c1e/blocks/cocosAudio.js"></script>
+<script src="frameworks/google-blockly-3e12c1e/blocks/startGame.js"></script>
+<script src="frameworks/google-blockly-3e12c1e/generators/javascript/cocosAudio.js"></script>
+<script src="frameworks/google-blockly-3e12c1e/generators/javascript/startGame.js"></script>
+
+<div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
+<xml id="toolbox" style="display: none">
+    <category name="Cocos">
+        <block type="text_length"></block>
+        <block type="start_game"></block>
+    </category>
+    <category name ="Other">
+        <block type="controls_if"></block>
+        <block type="controls_repeat_ext"></block>
+        <block type="logic_compare"></block>
+        <block type="math_number"></block>
+        <block type="math_arithmetic"></block>
+        <block type="text"></block>
+        <block type="text_print"></block>
+    </category>
+
+</xml>
+<div><script>
+        Blockly.inject(document.getElementById('blocklyDiv'),
+            {toolbox: document.getElementById('toolbox')});
+    function runJS(){Blockly.JavaScript.workspaceToCode();}
+
+    </script>
+</div>
+<a href="javascript: return false;" onclick="javascript:runJS()">Run in Javascript</a>
+<div id ="cocos_output"></div>
+</body>
+</html>
