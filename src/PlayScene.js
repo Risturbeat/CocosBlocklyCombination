@@ -23,6 +23,7 @@ var PlayScene = cc.Scene.extend({
         this.space.addCollisionHandler(SpriteTag.runner, SpriteTag.rock,
             this.collisionRockBegin.bind(this), null, null, null);
     },
+
     collisionCoinBegin:function (arbiter, space) {
         var shapes = arbiter.getShapes();
         cc.audioEngine.playEffect(res.pickup_coin_mp3);
@@ -54,14 +55,20 @@ var PlayScene = cc.Scene.extend({
         this.gameLayer.addChild(new AnimationLayer(this.space), 0, TagOfLayer.Animation);
         this.addChild(this.gameLayer);
         this.addChild(new StatusLayer(), 0, TagOfLayer.Status);
+
         this.playMusic();
 
         this.scheduleUpdate();
+    },
 
-    },
     playMusic:function(){
-        cc.audioEngine.playEffect(backgroundMusicToPlay,true);
+        if(backgroundMusicToPlay!=null){
+            cc.audioEngine.playEffect(backgroundMusicToPlay,true);
+        }else{
+            cc.log("No background music has been set");
+        }
     },
+
     update:function (dt) {
         // chipmunk step
         this.space.step(dt);
