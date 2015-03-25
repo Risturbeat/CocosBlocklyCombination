@@ -3,7 +3,7 @@ if(typeof RunnerStat == "undefined") {
     RunnerStat.running = 0;
     RunnerStat.jumpUp = 1;
     RunnerStat.jumpDown = 2;
-};
+}
 
 var AnimationLayer = cc.Layer.extend({
     spriteSheet: null,
@@ -43,30 +43,7 @@ var AnimationLayer = cc.Layer.extend({
         this._super();
 
         // create sprite sheet
-        cc.spriteFrameCache.addSpriteFrames(res.runner_plist);
-        this.spriteSheet = new cc.SpriteBatchNode(res.runner_png);
-        this.addChild(this.spriteSheet);
 
-        this.initAction();
-
-        //create runner through physic engine
-        this.sprite = new cc.PhysicsSprite("#runner0.png");
-        var contentSize = this.sprite.getContentSize();
-        // init body
-        this.body = new cp.Body(1, cp.momentForBox(1, contentSize.width, contentSize.height));
-        this.body.p = cc.p(g_runnerStartX, g_groundHeight + contentSize.height / 2);
-        this.body.applyImpulse(cp.v(150, 0), cp.v(0, 0));//run speed
-        this.space.addBody(this.body);
-        //init shape
-        this.shape = new cp.BoxShape(this.body, contentSize.width - 14, contentSize.height);
-        this.space.addShape(this.shape);
-
-        this.sprite.setBody(this.body);
-        this.sprite.runAction(this.runningAction);
-
-        this.spriteSheet.addChild(this.sprite);
-
-        this.scheduleUpdate();
 
         cc.eventManager.addListener({
             event: cc.EventListener.TOUCH_ONE_BY_ONE,
@@ -77,7 +54,6 @@ var AnimationLayer = cc.Layer.extend({
         }, this);
         this.recognizer = new SimpleRecognizer();
     },
-
     getEyeX:function () {
         return this.sprite.getPositionX() - g_runnerStartX;
     },
@@ -150,7 +126,32 @@ var AnimationLayer = cc.Layer.extend({
         this.jumpDownAction = new cc.Animate(animation);
         this.jumpDownAction.retain();
     },
+addSpriteToAnimationLayer : function(){
+    cc.spriteFrameCache.addSpriteFrames(res.runner_plist);
+    this.spriteSheet = new cc.SpriteBatchNode(res.runner_png);
+    this.addChild(this.spriteSheet);
 
+    this.initAction();
+
+    //create runner through physic engine
+    this.sprite = new cc.PhysicsSprite("#runner0.png");
+    var contentSize = this.sprite.getContentSize();
+    // init body
+    this.body = new cp.Body(1, cp.momentForBox(1, contentSize.width, contentSize.height));
+    this.body.p = cc.p(g_runnerStartX, g_groundHeight + contentSize.height / 2);
+    this.body.applyImpulse(cp.v(150, 0), cp.v(0, 0));//run speed
+    this.space.addBody(this.body);
+    //init shape
+    this.shape = new cp.BoxShape(this.body, contentSize.width - 14, contentSize.height);
+    this.space.addShape(this.shape);
+
+    this.sprite.setBody(this.body);
+    this.sprite.runAction(this.runningAction);
+
+    this.spriteSheet.addChild(this.sprite);
+
+    this.scheduleUpdate();
+},
     onTouchBegan:function(touch, event) {
         var pos = touch.getLocation();
         event.getCurrentTarget().recognizer.beginPoint(pos.x, pos.y);
@@ -211,3 +212,4 @@ var AnimationLayer = cc.Layer.extend({
     }
 
 });
+

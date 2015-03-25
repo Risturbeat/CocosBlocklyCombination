@@ -20,23 +20,29 @@
     </style>
 </head>
 <body style="padding:0; margin: 0; background: #000;">
-<canvas id="gameCanvas" width="480" height="320"></canvas>
+
+<canvas id="gameCanvas" width="4" height="3"></canvas>
 <script src="frameworks/cocos2d-html5/CCBoot.js"></script>
 <script src="main.js"></script>
 <script src="frameworks/google-blockly-3e12c1e/blockly_compressed.js"></script>
 <script src="frameworks/google-blockly-3e12c1e/blocks_compressed.js"></script>
 <script src="frameworks/google-blockly-3e12c1e/msg/js/en.js"></script>
 <script src="frameworks/google-blockly-3e12c1e/javascript_compressed.js"></script>
+
 <script src="frameworks/google-blockly-3e12c1e/blocks/cocosAudio.js"></script>
 <script src="frameworks/google-blockly-3e12c1e/blocks/startGame.js"></script>
+<script src="frameworks/google-blockly-3e12c1e/blocks/addSprite.js"></script>
+
 <script src="frameworks/google-blockly-3e12c1e/generators/javascript/cocosAudio.js"></script>
 <script src="frameworks/google-blockly-3e12c1e/generators/javascript/startGame.js"></script>
+<script src="frameworks/google-blockly-3e12c1e/generators/javascript/addSprite.js"></script>
 
 <div id="blocklyDiv" style="height: 480px; width: 600px;"></div>
 <xml id="toolbox" style="display: none">
     <category name="Cocos">
         <block type="text_length"></block>
         <block type="start_game"></block>
+        <block type="add_sprite"></block>
     </category>
     <category name ="Other">
         <block type="controls_if"></block>
@@ -49,10 +55,11 @@
     </category>
 
 </xml>
-<div><script>
+<div>
+    <script>
         Blockly.inject(document.getElementById('blocklyDiv'),
             {toolbox: document.getElementById('toolbox')});
-    function runJS(){Blockly.JavaScript.workspaceToCode();}
+        function runJS(){Blockly.JavaScript.workspaceToCode();}
 
     </script>
 </div>
