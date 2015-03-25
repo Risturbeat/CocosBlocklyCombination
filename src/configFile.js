@@ -3,4 +3,5 @@
  */
 
 
-var backgroundMusicToPlay= null;
+var backgroundMusicToPlay = null;
+var startImageToShow = null;

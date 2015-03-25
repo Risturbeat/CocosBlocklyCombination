@@ -1,6 +1,7 @@
 
 
 var MenuLayer = cc.Layer.extend({
+    startImage: res.helloBG_png,
     ctor : function(){
         //1. call super class's ctor function
         this._super();
@@ -16,9 +17,7 @@ var MenuLayer = cc.Layer.extend({
         var centerpos = cc.p(winsize.width / 2, winsize.height / 2);
 
         //4. create a background image and set it's position at the center of the screen
-        var spritebg = new cc.Sprite(res.helloBG_png);
-        spritebg.setPosition(centerpos);
-        this.addChild(spritebg);
+        this.setBackground(centerpos),
 
         //5.
         cc.MenuItemFont.setFontSize(60);
@@ -31,6 +30,16 @@ var MenuLayer = cc.Layer.extend({
         var menu = new cc.Menu(menuItemPlay);  //7. create the menu
         menu.setPosition(centerpos);
         this.addChild(menu);
+    },
+
+    setBackground:function(pos){
+        if(startImageToShow!=null){
+            var spritebg = new cc.Sprite(startImageToShow);
+            spritebg.setPosition(pos);
+            this.addChild(spritebg);
+        }else{
+            cc.log("No background image has been set");
+        }
     },
 
     onPlay : function(){

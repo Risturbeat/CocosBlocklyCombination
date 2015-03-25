@@ -14,6 +14,7 @@ var res = {
     restart_s_png : "res/restart_s.png",
     fireball_plist: "res/fireball.plist",
     fireball_png: "res/fireball.png",
+    girly_png : "res/girly.png",
 
     //Sounds
     background_mp3 : "res/sounds/backgroundMusic.mp3",
@@ -38,6 +39,7 @@ var g_resources = [
     res.restart_s_png,
     res.fireball_plist,
     res.fireball_png,
+    res.girly_png,
 
     //Sounds
     res.background_mp3,
