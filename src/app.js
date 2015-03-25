@@ -1,7 +1,6 @@
 
 
 var MenuLayer = cc.Layer.extend({
-    startImage: res.helloBG_png,
     ctor : function(){
         //1. call super class's ctor function
         this._super();
