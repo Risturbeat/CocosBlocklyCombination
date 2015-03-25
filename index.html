@@ -37,9 +37,12 @@
 <script src="frameworks/google-blockly-3e12c1e/blocks/cocosAudio.js"></script>
 <script src="frameworks/google-blockly-3e12c1e/blocks/startGame.js"></script>
 <script src="frameworks/google-blockly-3e12c1e/blocks/startImage.js"></script>
+<script src="frameworks/google-blockly-3e12c1e/blocks/addSprite.js"></script>
 <script src="frameworks/google-blockly-3e12c1e/generators/javascript/cocosAudio.js"></script>
 <script src="frameworks/google-blockly-3e12c1e/generators/javascript/startGame.js"></script>
 <script src="frameworks/google-blockly-3e12c1e/generators/javascript/startImage.js"></script>
+<script src="frameworks/google-blockly-3e12c1e/generators/javascript/addSprite.js"></script>
+
 <div id="container">
     <div id="leftContainer">
         <div id="blocklyDiv" style="width: 100%;"></div>
@@ -76,7 +79,7 @@
         });
         Blockly.inject(document.getElementById('blocklyDiv'),
             {toolbox: document.getElementById('toolbox')});
-    function runJS(){Blockly.JavaScript.workspaceToCode();}
+        function runJS(){Blockly.JavaScript.workspaceToCode();}
 
     </script>
 </div>

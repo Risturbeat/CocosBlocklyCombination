@@ -19,7 +19,8 @@ var res = {
     //Sounds
     background_mp3 : "res/sounds/backgroundMusic.mp3",
     jump_mp3 : "res/sounds/jump.mp3",
-    pickup_coin_mp3 : "res/sounds/pickup_coin.mp3"
+    pickup_coin_mp3 : "res/sounds/pickup_coin.mp3",
+    background_mintjam_mp3: "res/sounds/backgroundMusicMintjam.mp3"
 };
 
 var g_resources = [
@@ -44,10 +45,11 @@ var g_resources = [
     //Sounds
     res.background_mp3,
     res.jump_mp3,
-    res.pickup_coin_mp3
+    res.pickup_coin_mp3,
+    res.background_mintjam_mp3
 ];
 
-var g_resources = [];
-for (var i in res) {
-    g_resources.push(res[i]);
-}
+//var g_resources = [];
+//for (var i in res) {
+//    g_resources.push(res[i]);
+//}
