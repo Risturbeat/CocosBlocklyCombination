@@ -1,16 +1,16 @@
 body, canvas, div {
-            -moz-user-select: none;
-            -webkit-user-select: none;
-            -ms-user-select: none;
-            -khtml-user-select: none;
-            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-        }
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
 
-        #container {
-            width:100%;
-        }
+    #container {
+        width:100%;
+    }
 
-        #leftContainer, #rightContainer {
-             width:50%;
-             float:left;
-         }
+    #leftContainer, #rightContainer {
+         width:50%;
+         float:left;
+    }

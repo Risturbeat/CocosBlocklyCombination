@@ -21,4 +21,6 @@ Blockly.JavaScript['start_image'] = function(block){
             cc.log("None of the selected music can be found");
             break;
     }
+    return ["start image changed", Blockly.JavaScript.ORDER_NONE]
+
 };
