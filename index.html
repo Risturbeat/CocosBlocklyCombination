@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <meta charset="utf-8">
     <title>Cocos2d-html5 Hello World test</title>
     <link rel="icon" type="image/GIF" href="res/favicon.ico"/>
@@ -10,6 +9,23 @@
     <meta name="screen-orientation" content="portrait"/>
     <meta name="x5-fullscreen" content="true"/>
     <meta name="360-fullscreen" content="true"/>
+
+    <script src="frameworks/google-blockly-3e12c1e/blockly_compressed.js"></script>
+    <script src="frameworks/google-blockly-3e12c1e/blocks_compressed.js"></script>
+    <script src="frameworks/google-blockly-3e12c1e/msg/js/en.js"></script>
+    <script src="frameworks/google-blockly-3e12c1e/javascript_compressed.js"></script>
+    <script src="frameworks/google-blockly-3e12c1e/blocks/cocosAudio.js"></script>
+    <script src="frameworks/google-blockly-3e12c1e/blocks/startGame.js"></script>
+    <script src="frameworks/google-blockly-3e12c1e/generators/javascript/cocosAudio.js"></script>
+    <script src="frameworks/google-blockly-3e12c1e/generators/javascript/startGame.js"></script>
+
+    <script src="frameworks/jquery-2.1.3.js"></script>
+
+    <script src="frameworks/cocos2d-html5/CCBoot.js"></script>
+    <script src="main.js"></script>
+
+    <script src="blockly.js"></script>
+
     <style>
         body, canvas, div {
             -moz-user-select: none;
@@ -24,58 +40,25 @@
         }
 
         #leftContainer, #rightContainer {
-            width:50%;
-            float:left;
-        }
+             width:50%;
+             float:left;
+         }
     </style>
 </head>
 <body style="padding:0; margin: 0; background: #000;">
-<script src="frameworks/google-blockly-3e12c1e/blockly_compressed.js"></script>
-<script src="frameworks/google-blockly-3e12c1e/blocks_compressed.js"></script>
-<script src="frameworks/google-blockly-3e12c1e/msg/js/en.js"></script>
-<script src="frameworks/google-blockly-3e12c1e/javascript_compressed.js"></script>
-<script src="frameworks/google-blockly-3e12c1e/blocks/cocosAudio.js"></script>
-<script src="frameworks/google-blockly-3e12c1e/blocks/startGame.js"></script>
-<script src="frameworks/google-blockly-3e12c1e/generators/javascript/cocosAudio.js"></script>
-<script src="frameworks/google-blockly-3e12c1e/generators/javascript/startGame.js"></script>
+
 <div id="container">
     <div id="leftContainer">
         <div id="blocklyDiv" style="width: 100%;"></div>
-        <xml id="toolbox" style="display: none">
-            <category name="Cocos">
-                <block type="text_length"></block>
-                <block type="start_game"></block>
-            </category>
-            <category name ="Other">
-                <block type="controls_if"></block>
-                <block type="controls_repeat_ext"></block>
-                <block type="logic_compare"></block>
-                <block type="math_number"></block>
-                <block type="math_arithmetic"></block>
-                <block type="text"></block>
-                <block type="text_print"></block>
-            </category>
+        <div id="toolboxDiv"></div>
+        <div id="startBlocksDiv"></div>
 
-        </xml>
-
-        <button onclick="javascript:runJS()">Run in Javascript</button>
+        <button onclick="showCode()">Show JavaScript</button>
+        <button onclick="runCode()">Run JavaScript</button>
     </div>
     <div id="rightContainer">
         <canvas id="gameCanvas" width="100%" height="600"></canvas>
-        <script src="frameworks/cocos2d-html5/CCBoot.js"></script>
-        <script src="main.js"></script>
     </div>
-</div>
-<div>
-    <script>
-        $(window).resize(function() {
-            $('#blocklyDiv').css('height', window.innerHeight+'px');
-        });
-        Blockly.inject(document.getElementById('blocklyDiv'),
-            {toolbox: document.getElementById('toolbox')});
-    function runJS(){Blockly.JavaScript.workspaceToCode();}
-
-    </script>
 </div>
 </body>
 </html>
