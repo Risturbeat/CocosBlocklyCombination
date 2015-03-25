@@ -31,16 +31,13 @@ var PlayScene = cc.Scene.extend({
         this.shapesToRemove.push(shapes[1]);
         var statusLayer = this.getChildByTag(TagOfLayer.Status);
         statusLayer.addCoin(1);
-
     },
 
     collisionRockBegin:function (arbiter, space) {
         cc.log("==game over");
+        cc.audioEngine.stopAllEffects();
         cc.director.pause();
-        //cc.audioEngine.stopBackgroundMusic();
         this.addChild(new GameOverLayer());
-       // cc.audioEngine.stopEffect(backgroundMusic);
-
     },
 
     onEnter:function () {
@@ -48,7 +45,6 @@ var PlayScene = cc.Scene.extend({
         this.initPhysics();
 
         this.gameLayer = new cc.Layer();
-
 
         //add three layer in the right order
         this.gameLayer.addChild(new BackgroundLayer(this.space), 0, TagOfLayer.background);

@@ -10,7 +10,9 @@ goog.require('Blockly.Blocks');
 Blockly.Blocks['start_game'] = {
 
     init: function() {
-        this.setHelpUrl('http://www.w3schools.com/jsref/jsref_length_string.asp');
+        this.appendDummyInput()
+            .appendField("Start Game");
         this.setColour(0);
+        this.setNextStatement(true);
     }
 };
