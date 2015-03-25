@@ -17,5 +17,6 @@ Blockly.Blocks['start_image'] = {
             .appendField('Select your start background')
             .appendField(dropdown, 'startImage');
         this.setTooltip('Set the background image at start');
+        this.setPreviousStatement(true);
     }
 };

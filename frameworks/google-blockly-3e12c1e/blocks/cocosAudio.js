@@ -17,5 +17,6 @@ Blockly.Blocks['text_length'] = {
             .appendField(dropdown, 'music');
         this.setTooltip('Set the background music');
         this.setPreviousStatement(true);
+        this.setNextStatement(true);
     }
 };

@@ -22,5 +22,7 @@ Blockly.JavaScript['text_length'] = function(block){
             break;
     }
 
+    return ["audio changed", Blockly.JavaScript.ORDER_NONE];
+
 
 };
