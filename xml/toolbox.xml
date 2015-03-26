@@ -3,6 +3,7 @@
         <block type="text_length"></block>
         <block type="start_game"></block>
         <block type="start_image"></block>
+        <block type="template"></block>
     </category>
     <category name ="Other">
         <block type="controls_if"></block>
