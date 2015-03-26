@@ -11,7 +11,16 @@ Blockly.JavaScript['sprite_custom'] = function(block) {
   var x_pos = Blockly.JavaScript.valueToCode(block, "posX", Blockly.JavaScript.ORDER_ASSIGNMENT) || 0;
   var y_pos = Blockly.JavaScript.valueToCode(block, "posY", Blockly.JavaScript.ORDER_ASSIGNMENT) || 0;
 
-  // your code here //
+
+  plist = res.jumpUp_plist;
+  spriteIndex = "#runnerJumpUp0.png";
+  spriteImage = res.jumpUp_png;
+
+  g_runnerStartX = parseInt(x_pos);
+  g_groundHeight = parseInt(y_pos);
+
+
+  return ["ret", Blockly.JavaScript.ORDER_NONE]
 };
 
 

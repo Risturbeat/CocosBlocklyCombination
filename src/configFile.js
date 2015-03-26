@@ -5,3 +5,7 @@
 
 var backgroundMusicToPlay = null;
 var startImageToShow = null;
+var plist = null;
+var spriteIndex = null;
+var spriteImage = null;
+

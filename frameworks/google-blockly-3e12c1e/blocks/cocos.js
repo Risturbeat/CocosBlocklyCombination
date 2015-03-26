@@ -13,7 +13,7 @@ Blockly.Blocks['sprite_custom'] = {
         this.setColour(230);
         this.appendValueInput("posX")
             .setAlign(Blockly.ALIGN_CENTRE)
-            .appendField("SpritePos-X"); 
+            .appendField("SpritePos-X");
         this.appendValueInput("posY")
             .setAlign(Blockly.ALIGN_CENTRE)
             .appendField("SpritePos-Y");

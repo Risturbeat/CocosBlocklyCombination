@@ -4,6 +4,7 @@
         <block type="start_game"></block>
         <block type="start_image"></block>
         <block type="template"></block>
+        <block type="sprite_custom"></block>
     </category>
     <category name ="Other">
         <block type="controls_if"></block>
@@ -14,5 +15,4 @@
         <block type="text"></block>
         <block type="text_print"></block>
     </category>
-
 </xml>
