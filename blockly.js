@@ -41,6 +41,10 @@ function showCode() {
 
 function runCode() {
     // Generate JavaScript code and run it.
+
+    //console.log(msgpack.pack({'test': 'faf'}) + "");
+    //console.log(msgpack.unpack(msgpack.pack({'test': 'faf'})) + "");
+
     window.LoopTrap = 1000;
     Blockly.JavaScript.INFINITE_LOOP_TRAP =
         'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
